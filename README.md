@@ -4,7 +4,9 @@
 > that gives any Dash application the full Dracula colour experience, including a light-mode
 > toggle and always-light PDF export.
 
-![Screenshot](screenshot.png)
+| Dark mode | Light mode |
+|---|---|
+| ![Dark mode](screenshot_dark.png) | ![Light mode](screenshot_light.png) |
 
 ## Install
 
