@@ -1,0 +1,4 @@
+include CONTRIBUTORS.md
+include INSTALL.md
+include screenshot_dark.png
+include screenshot_light.png

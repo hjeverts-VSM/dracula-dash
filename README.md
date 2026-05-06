@@ -6,7 +6,7 @@
 
 | Dark mode | Light mode |
 |---|---|
-| ![Dark mode](screenshot_dark.png) | ![Light mode](screenshot_light.png) |
+| ![Dark mode](https://raw.githubusercontent.com/hjeverts-VSM/dracula-dash/master/screenshot_dark.png) | ![Light mode](https://raw.githubusercontent.com/hjeverts-VSM/dracula-dash/master/screenshot_light.png) |
 
 ## Install
 
