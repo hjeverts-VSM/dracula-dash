@@ -7,8 +7,8 @@ Source: https://draculatheme.com/contribute
 All hex values are lowercase to match CSS convention.
 """
 
-# ── Official Dracula palette ─────────────────────────────────────────────────
-# https://draculatheme.com/contribute
+# ── Official Dracula Classic palette (dark) ──────────────────────────────────
+# https://draculatheme.com/contribute  /  https://draculatheme.com/spec
 BACKGROUND   = "#282a36"   # main background
 CURRENT_LINE = "#44475a"   # current-line / selection highlight
 SELECTION    = "#44475a"   # alias for CURRENT_LINE
@@ -24,9 +24,36 @@ CYAN   = "#8be9fd"
 PURPLE = "#bd93f9"
 PINK   = "#ff79c6"
 
+# ── Official Alucard Classic palette (light) ─────────────────────────────────
+# https://draculatheme.com/spec  — complementary light theme
+AL_BACKGROUND   = "#fffbeb"   # main background (warm off-white)
+AL_CURRENT_LINE = "#6c664b"   # current-line / comment (dark gold)
+AL_SELECTION    = "#cfcfde"   # text selection (light lavender-grey)
+AL_FOREGROUND   = "#1f1f1f"   # default text (near-black)
+AL_COMMENT      = "#6c664b"   # comments / secondary UI text
+
+# Alucard accent colours (darkened for readability on light bg)
+AL_RED    = "#cb3a2a"
+AL_ORANGE = "#a34d14"
+AL_YELLOW = "#846e15"
+AL_GREEN  = "#14710a"
+AL_CYAN   = "#036a96"
+AL_PURPLE = "#644ac9"
+AL_PINK   = "#a3144d"
+
+# Alucard UI surface colours (from the spec UI palette)
+AL_SURFACE          = "#efeddc"   # floating interactive elements
+AL_BG_LIGHTER       = "#ece9df"   # background lighter
+AL_BG_LIGHT         = "#dedccf"   # background light / borders
+AL_BG_DARK          = "#ceccc0"   # background dark / scrollbar thumb
+AL_BG_DARKER        = "#bcbab3"   # background darker
+
 # ── Plotly colorway (dark theme traces) ─────────────────────────────────────
 # Order: most-distinct first so first few traces are always visually separated
 COLORWAY = [CYAN, PURPLE, GREEN, ORANGE, PINK, RED, YELLOW]
+
+# ── Alucard colorway (light theme traces) ────────────────────────────────────
+ALUCARD_COLORWAY = [AL_CYAN, AL_PURPLE, AL_GREEN, AL_ORANGE, AL_PINK, AL_RED, AL_YELLOW]
 
 # ── Neutral colorway (readable on both dark AND light backgrounds) ───────────
 # Use these for data traces when your app supports a light-mode toggle.
@@ -59,22 +86,23 @@ PRINT_COLORS = {
     "fig_line":   "#999999",
 }
 
-# ── Light-mode UI colours (CSS `body.light-theme` overrides) ─────────────────
+# ── Light-mode UI colours — Alucard Classic palette ──────────────────────────
+# CSS `body.light-theme` overrides use these values.
 LIGHT_COLORS = {
-    "background": "#f5f5f5",
-    "surface":    "#ffffff",
-    "foreground": "#212529",
-    "comment":    "#6c757d",
-    "cyan":       "#0066cc",
-    "green":      "#198754",
-    "orange":     "#e06c00",
-    "pink":       "#c0357a",
-    "purple":     "#6610f2",
-    "red":        "#dc3545",
-    "yellow":     "#b58900",
-    "border":     "#dee2e6",
-    "axis_line":  "#adb5bd",
-    "tick_font":  "#495057",
+    "background":   AL_BACKGROUND,    # #fffbeb
+    "surface":      AL_SURFACE,       # #efeddc
+    "foreground":   AL_FOREGROUND,    # #1f1f1f
+    "comment":      AL_COMMENT,       # #6c664b
+    "cyan":         AL_CYAN,          # #036a96
+    "green":        AL_GREEN,         # #14710a
+    "orange":       AL_ORANGE,        # #a34d14
+    "pink":         AL_PINK,          # #a3144d
+    "purple":       AL_PURPLE,        # #644ac9
+    "red":          AL_RED,           # #cb3a2a
+    "yellow":       AL_YELLOW,        # #846e15
+    "border":       AL_BG_LIGHT,      # #dedccf
+    "axis_line":    AL_BG_DARK,       # #ceccc0
+    "tick_font":    AL_COMMENT,       # #6c664b
 }
 
 # ── Convenience dict of all official palette colours ────────────────────────

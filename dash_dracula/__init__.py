@@ -26,7 +26,7 @@ Quick start::
 """
 
 # ── Auto-register the Plotly template on import ──────────────────────────────
-from .plotly_template import register as _register, TEMPLATE_NAME
+from .plotly_template import register as _register, TEMPLATE_NAME, TEMPLATE_NAME_ALUCARD
 
 _register()
 
@@ -49,6 +49,20 @@ from .colors import (
     PRINT_COLORS,
     LIGHT_COLORS,
     AS_DICT as PALETTE,
+    # Alucard (light) palette
+    AL_BACKGROUND,
+    AL_CURRENT_LINE,
+    AL_SELECTION,
+    AL_FOREGROUND,
+    AL_COMMENT,
+    AL_RED,
+    AL_ORANGE,
+    AL_YELLOW,
+    AL_GREEN,
+    AL_CYAN,
+    AL_PURPLE,
+    AL_PINK,
+    ALUCARD_COLORWAY,
 )
 
 # ── Bootstrap / theme wiring ─────────────────────────────────────────────────
@@ -58,13 +72,17 @@ from .bootstrap import apply_theme, theme_toggle_button
 from .pdf import fig_to_print_image
 
 __all__ = [
-    # Template
-    "TEMPLATE_NAME",
-    # Official palette
+    # Templates
+    "TEMPLATE_NAME", "TEMPLATE_NAME_ALUCARD",
+    # Official Dracula Classic palette
     "BACKGROUND", "CURRENT_LINE", "SELECTION", "FOREGROUND", "COMMENT",
     "RED", "ORANGE", "YELLOW", "GREEN", "CYAN", "PURPLE", "PINK",
+    # Official Alucard Classic palette (light)
+    "AL_BACKGROUND", "AL_CURRENT_LINE", "AL_SELECTION", "AL_FOREGROUND", "AL_COMMENT",
+    "AL_RED", "AL_ORANGE", "AL_YELLOW", "AL_GREEN", "AL_CYAN", "AL_PURPLE", "AL_PINK",
     # Convenience collections
-    "COLORWAY", "NEUTRAL_COLORWAY", "PRINT_COLORS", "LIGHT_COLORS", "PALETTE",
+    "COLORWAY", "ALUCARD_COLORWAY", "NEUTRAL_COLORWAY",
+    "PRINT_COLORS", "LIGHT_COLORS", "PALETTE",
     # Bootstrap helpers
     "apply_theme", "theme_toggle_button",
     # PDF
