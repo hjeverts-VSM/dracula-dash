@@ -49,7 +49,7 @@ See [sample/app.py](sample/app.py) for a complete minimal example.
 This theme is maintained by the following person(s) and a bunch of
 [awesome contributors](https://github.com/dracula/dash/graphs/contributors).
 
-| [hjeverts-VSM](https://github.com/hjeverts-VSM) |
+| [hjeverts](https://github.com/hjeverts) |
 |---|
 
 ## Community
