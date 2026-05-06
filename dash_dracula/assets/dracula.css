@@ -1,0 +1,493 @@
+/* =============================================================
+   Dracula Theme – DOE Creator & Analyzer
+   Palette: https://draculatheme.com/contribute
+   ============================================================= */
+
+/* ── CSS variables ─────────────────────────────────────────── */
+:root {
+  --dr-bg:       #282a36;
+  --dr-surface:  #44475a;
+  --dr-fg:       #f8f8f2;
+  --dr-comment:  #6272a4;
+  --dr-cyan:     #8be9fd;
+  --dr-green:    #50fa7b;
+  --dr-orange:   #ffb86c;
+  --dr-pink:     #ff79c6;
+  --dr-purple:   #bd93f9;
+  --dr-red:      #ff5555;
+  --dr-yellow:   #f1fa8c;
+
+  /* Override Bootstrap 5 vars */
+  --bs-body-bg:          var(--dr-bg);
+  --bs-body-color:       var(--dr-fg);
+  --bs-card-bg:          var(--dr-surface);
+  --bs-card-border-color:var(--dr-comment);
+  --bs-border-color:     var(--dr-comment);
+  --bs-link-color:       var(--dr-cyan);
+  --bs-link-hover-color: var(--dr-purple);
+  --bs-secondary-color:  var(--dr-comment);
+  --bs-light-rgb:        68, 71, 90;
+  --bs-dark-rgb:         40, 42, 54;
+  --bs-nav-tabs-border-color: var(--dr-comment);
+  --bs-nav-tabs-link-active-bg: var(--dr-surface);
+  --bs-nav-tabs-link-active-color: var(--dr-cyan);
+  --bs-nav-tabs-link-hover-border-color: var(--dr-comment);
+  /* Override Bootstrap primary so text-primary / btn-primary use Dracula purple */
+  --bs-primary:          #bd93f9;
+  --bs-primary-rgb:      189, 147, 249;
+  --bs-link-color-rgb:   139, 233, 253;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+body {
+  background-color: var(--dr-bg) !important;
+  color: var(--dr-fg) !important;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 { color: var(--dr-fg); }
+hr { border-color: var(--dr-comment); opacity: 0.5; }
+.text-muted   { color: var(--dr-comment) !important; }
+.text-primary { color: #8be9fd !important; }   /* cyan, readable on any Dracula bg */
+.text-success { color: #50fa7b !important; }
+.text-warning { color: #f1fa8c !important; }
+.text-danger  { color: #ff5555 !important; }
+.text-info    { color: #8be9fd !important; }
+.fw-semibold  { font-weight: 600; }
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.card {
+  background-color: #44475a !important;
+  border-color: #6272a4 !important;
+  color: #f8f8f2 !important;
+}
+.card-title { color: #8be9fd !important; }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn-primary              { background-color: #bd93f9; border-color: #bd93f9; color: #282a36; }
+.btn-primary:hover         { background-color: #ff79c6; border-color: #ff79c6; }
+.btn-outline-primary      { border-color: #bd93f9; color: #bd93f9; }
+.btn-outline-primary:hover { background-color: #bd93f9; color: #282a36; }
+.btn-success              { background-color: #50fa7b; border-color: #50fa7b; color: #282a36; }
+.btn-outline-secondary    { border-color: #6272a4; color: #6272a4; }
+.btn-outline-secondary:hover { background-color: #6272a4; color: #282a36; }
+.btn-outline-info         { border-color: #8be9fd; color: #8be9fd; }
+.btn-outline-info:hover   { background-color: #8be9fd; color: #282a36; }
+
+/* ── Forms ──────────────────────────────────────────────────── */
+.form-control,
+.form-select,
+input[type="text"],
+input[type="number"] {
+  background-color: var(--dr-surface) !important;
+  color: var(--dr-fg) !important;
+  border-color: var(--dr-comment) !important;
+}
+.form-control:focus,
+.form-select:focus,
+input:focus {
+  background-color: var(--dr-surface) !important;
+  color: var(--dr-fg) !important;
+  border-color: var(--dr-purple) !important;
+  box-shadow: 0 0 0 0.2rem rgba(189, 147, 249, 0.25) !important;
+}
+.form-text { color: var(--dr-comment) !important; }
+label      { color: var(--dr-fg) !important; }
+
+/* ── Tabs ───────────────────────────────────────────────────── */
+.nav-tabs { border-bottom-color: var(--dr-comment) !important; }
+.nav-tabs .nav-link {
+  color: var(--dr-comment) !important;
+  border-color: transparent !important;
+}
+.nav-tabs .nav-link:hover {
+  color: var(--dr-fg) !important;
+  border-color: var(--dr-comment) !important;
+}
+.nav-tabs .nav-link.active {
+  background-color: var(--dr-surface) !important;
+  color: var(--dr-cyan) !important;
+  border-color: var(--dr-comment) var(--dr-comment) var(--dr-surface) !important;
+}
+.tab-content { background-color: var(--dr-bg) !important; }
+
+/* ── Accordion ──────────────────────────────────────────────── */
+.accordion-button {
+  background-color: var(--dr-surface) !important;
+  color: var(--dr-fg) !important;
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--dr-surface) !important;
+  color: var(--dr-cyan) !important;
+  box-shadow: none !important;
+}
+.accordion-button::after { filter: invert(1) brightness(2); }
+.accordion-body {
+  background-color: var(--dr-bg) !important;
+  color: var(--dr-fg) !important;
+}
+.accordion-item {
+  background-color: var(--dr-bg) !important;
+  border-color: var(--dr-comment) !important;
+}
+
+/* ── dcc.Dropdown (Dash 4.x — Radix UI, dash-dropdown-* classes) ─────────── */
+/* The Popover portal renders inside .dash-dropdown-wrapper, so CSS vars      */
+/* set here cascade into .dash-dropdown-content (the visible popup menu).     */
+
+/* Override Dash design-system CSS variables at the wrapper level */
+.dash-dropdown-wrapper {
+  --Dash-Fill-Inverse-Strong:      #44475a;
+  --Dash-Text-Strong:              #f8f8f2;
+  --Dash-Text-Weak:                #f8f8f2;
+  --Dash-Text-Disabled:            #6272a4;
+  --Dash-Stroke-Strong:            #6272a4;
+  --Dash-Fill-Interactive-Strong:  #bd93f9;
+  --Dash-Fill-Interactive-Weak:    rgba(189, 147, 249, 0.2);
+  --Dash-Fill-Disabled:            #6272a4;
+  --Dash-Shading-Strong:           rgba(0, 0, 0, 0.50);
+  --Dash-Shading-Weak:             rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+/* Trigger button */
+.dash-dropdown {
+  background-color: #44475a !important;
+  border: 1px solid #6272a4 !important;
+  color: #f8f8f2 !important;
+}
+.dash-dropdown:focus {
+  border-color: #bd93f9 !important;
+  outline-color: #bd93f9 !important;
+}
+
+/* Value / placeholder text */
+.dash-dropdown-value     { color: #f8f8f2 !important; }
+.dash-dropdown-placeholder { color: #6272a4 !important; }
+.dash-dropdown-value-count { color: #f8f8f2 !important; background: rgba(189,147,249,0.2) !important; }
+
+/* Caret icon & clear button */
+.dash-dropdown-trigger-icon { color: #f8f8f2 !important; fill: #f8f8f2 !important; }
+.dash-dropdown-clear        { color: #6272a4 !important; }
+.dash-dropdown-clear:hover  { color: #ff5555 !important; }
+
+/* ── Dropdown popup (the Radix Popover.Content) ────────────── */
+.dash-dropdown-content {
+  background-color: #44475a !important;
+  border-color: #6272a4 !important;
+  color: #f8f8f2 !important;
+  z-index: 9999 !important;
+}
+
+/* Search area */
+.dash-dropdown-search-container {
+  background-color: #282a36 !important;
+  border-color: #6272a4 !important;
+}
+.dash-dropdown-search {
+  background-color: transparent !important;
+  color: #f8f8f2 !important;
+}
+.dash-dropdown-search::placeholder { color: #6272a4 !important; }
+
+/* Options list */
+.dash-dropdown-options { background-color: #44475a !important; }
+.dash-dropdown-option  { background-color: #44475a !important; color: #f8f8f2 !important; }
+.dash-dropdown-option:hover,
+.dash-dropdown-option:focus-within { background-color: #6272a4 !important; color: #f8f8f2 !important; }
+/* Selected option highlight (radio/checkbox checked inside option) */
+.dash-dropdown-option:has(input:checked) { background-color: #44475a !important; color: #bd93f9 !important; }
+.dash-dropdown-option:has(input:checked):hover { background-color: #6272a4 !important; }
+
+/* Multi-select action buttons (Select All / Deselect All) */
+.dash-dropdown-actions       { background-color: #282a36 !important; border-color: #6272a4 !important; }
+.dash-dropdown-action-button { color: #8be9fd !important; }
+.dash-dropdown-action-button:hover { color: #bd93f9 !important; }
+
+/* ── Bootstrap native <select> (dbc.Select) ────────────────── */
+.form-select {
+  background-color: #44475a !important;
+  color: #f8f8f2 !important;
+  border-color: #6272a4 !important;
+}
+.form-select option { background-color: #44475a; color: #f8f8f2; }
+
+/* ── Bootstrap dropdown menu ────────────────────────────────── */
+.dropdown-menu    { background-color: #44475a !important; border-color: #6272a4 !important; }
+.dropdown-item    { color: #f8f8f2 !important; }
+.dropdown-item:hover,
+.dropdown-item:focus { background-color: #6272a4 !important; color: #f8f8f2 !important; }
+
+/* ── dash-ag-grid (ag-theme-alpine-dark Dracula overrides) ──────────────── */
+/* ag-theme-alpine-dark already provides a dark background; we just nudge    */
+/* the colours to match Dracula.                                              */
+.ag-theme-alpine-dark {
+  --ag-background-color:           #282a36;
+  --ag-header-background-color:    #44475a;
+  --ag-odd-row-background-color:   #2f3145;
+  --ag-row-hover-color:            #44475a;
+  --ag-selected-row-background-color: rgba(189,147,249,0.25);
+  --ag-border-color:               #6272a4;
+  --ag-header-foreground-color:    #f8f8f2;
+  --ag-foreground-color:           #f8f8f2;
+  --ag-secondary-foreground-color: #6272a4;
+  --ag-input-focus-border-color:   #bd93f9;
+  --ag-range-selection-border-color: #bd93f9;
+  --ag-alpine-active-color:        #bd93f9;
+  font-family: monospace;
+  font-size: 13px;
+}
+/* Cell editor (text / select input inside the grid) */
+.ag-theme-alpine-dark .ag-popup-editor,
+.ag-theme-alpine-dark .ag-select-list,
+.ag-theme-alpine-dark .ag-select-list-item,
+.ag-theme-alpine-dark .ag-popup,
+.ag-theme-alpine-dark .ag-rich-select-list,
+.ag-theme-alpine-dark .ag-select {
+  background-color: #44475a !important;
+  color: #f8f8f2 !important;
+  border-color: #6272a4 !important;
+}
+.ag-theme-alpine-dark .ag-select-list-item:hover,
+.ag-theme-alpine-dark .ag-select-list-item.ag-active-item {
+  background-color: #6272a4 !important;
+  color: #f8f8f2 !important;
+}
+/* Input cells */
+.ag-theme-alpine-dark .ag-cell-edit-wrapper input,
+.ag-theme-alpine-dark .ag-text-field-input {
+  background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border-color: #bd93f9 !important;
+}
+
+/* ── RadioItems / Checkboxes ────────────────────────────────── */
+.form-check-label { color: #f8f8f2 !important; }
+/* Radio/checkbox circle on both dark body AND lighter card (#44475a) backgrounds */
+.form-check-input {
+  background-color: #282a36 !important;
+  border: 2px solid #8be9fd !important;   /* cyan border — visible on both bg colours */
+}
+.form-check-input:checked {
+  background-color: #bd93f9 !important;
+  border-color: #bd93f9 !important;
+}
+.form-check-input:focus {
+  border-color: #bd93f9 !important;
+  box-shadow: 0 0 0 0.2rem rgba(189,147,249,0.25) !important;
+}
+
+/* ── Badges ─────────────────────────────────────────────────── */
+.badge.bg-primary { background-color: var(--dr-purple) !important; }
+.badge.bg-success { background-color: var(--dr-green) !important; color: var(--dr-bg) !important; }
+.badge.bg-info    { background-color: var(--dr-cyan) !important; color: var(--dr-bg) !important; }
+
+/* ── Markdown (Handleiding tab) ─────────────────────────────── */
+.dash-markdown h1 { color: var(--dr-purple); border-bottom: 1px solid var(--dr-comment); padding-bottom: 6px; }
+.dash-markdown h2 { color: var(--dr-cyan); }
+.dash-markdown h3 { color: var(--dr-green); }
+.dash-markdown h4 { color: var(--dr-orange); }
+.dash-markdown code {
+  background-color: var(--dr-surface);
+  color: var(--dr-yellow);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.dash-markdown pre {
+  background-color: var(--dr-surface);
+  border: 1px solid var(--dr-comment);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--dr-fg);
+}
+.dash-markdown table { width: 100%; border-collapse: collapse; }
+.dash-markdown th {
+  background-color: var(--dr-surface);
+  color: var(--dr-cyan);
+  border: 1px solid var(--dr-comment);
+  padding: 6px 10px;
+}
+.dash-markdown td {
+  border: 1px solid var(--dr-comment);
+  padding: 5px 10px;
+  color: var(--dr-fg);
+}
+.dash-markdown tr:nth-child(odd) td { background-color: #2f3145; }
+
+/* ── Scrollbars ─────────────────────────────────────────────── */
+* { scrollbar-color: var(--dr-comment) var(--dr-surface); scrollbar-width: thin; }
+::-webkit-scrollbar       { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--dr-surface); }
+::-webkit-scrollbar-thumb { background: var(--dr-comment); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--dr-purple); }
+
+/* ── Alert / toast ──────────────────────────────────────────── */
+.alert { background-color: var(--dr-surface) !important; border-color: var(--dr-comment) !important; color: var(--dr-fg) !important; }
+
+/* =============================================================
+   LIGHT THEME OVERRIDES  (active when <body class="light-theme">)
+   Override the CSS variables → almost everything re-colours
+   automatically.
+   ============================================================= */
+body.light-theme {
+  /* Overwrite Dracula palette with clean light-mode colours */
+  --dr-bg:       #f5f5f5;
+  --dr-surface:  #ffffff;
+  --dr-fg:       #212529;
+  --dr-comment:  #6c757d;
+  --dr-cyan:     #0066cc;
+  --dr-green:    #198754;
+  --dr-orange:   #e06c00;
+  --dr-pink:     #c0357a;
+  --dr-purple:   #6610f2;
+  --dr-red:      #dc3545;
+  --dr-yellow:   #b58900;
+
+  /* Bootstrap body variables */
+  --bs-body-bg:          #f5f5f5;
+  --bs-body-color:       #212529;
+  --bs-card-bg:          #ffffff;
+  --bs-card-border-color:#dee2e6;
+  --bs-border-color:     #dee2e6;
+  --bs-link-color:       #0066cc;
+  --bs-link-hover-color: #6610f2;
+  --bs-secondary-color:  #6c757d;
+  --bs-primary:          #6610f2;
+  --bs-primary-rgb:      102, 16, 242;
+  --bs-link-color-rgb:   0, 102, 204;
+  --bs-nav-tabs-border-color:          #dee2e6;
+  --bs-nav-tabs-link-active-bg:        #ffffff;
+  --bs-nav-tabs-link-active-color:     #0066cc;
+  --bs-nav-tabs-link-hover-border-color: #dee2e6;
+}
+
+/* Body & base text */
+body.light-theme       { background-color: #f5f5f5 !important; color: #212529 !important; }
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6    { color: #212529; }
+body.light-theme hr    { border-color: #dee2e6; opacity: 0.8; }
+body.light-theme .text-muted { color: #6c757d !important; }
+body.light-theme label { color: #212529 !important; }
+
+/* Cards */
+body.light-theme .card           { background-color: #ffffff !important; border-color: #dee2e6 !important; color: #212529 !important; }
+body.light-theme .card-title     { color: #0066cc !important; }
+body.light-theme .tab-content    { background-color: #f5f5f5 !important; }
+
+/* Nav tabs */
+body.light-theme .nav-tabs                     { border-bottom-color: #dee2e6 !important; }
+body.light-theme .nav-tabs .nav-link           { color: #6c757d !important; border-color: transparent !important; }
+body.light-theme .nav-tabs .nav-link:hover     { color: #212529 !important; border-color: #dee2e6 !important; }
+body.light-theme .nav-tabs .nav-link.active    { background-color: #ffffff !important; color: #0066cc !important; border-color: #dee2e6 #dee2e6 #ffffff !important; }
+
+/* Buttons */
+body.light-theme .btn-primary              { background-color: #6610f2; border-color: #6610f2; color: #fff; }
+body.light-theme .btn-primary:hover        { background-color: #520dc2; border-color: #520dc2; }
+body.light-theme .btn-outline-primary      { border-color: #6610f2; color: #6610f2; }
+body.light-theme .btn-outline-primary:hover { background-color: #6610f2; color: #fff; }
+body.light-theme .btn-success              { background-color: #198754; border-color: #198754; color: #fff; }
+body.light-theme .btn-outline-secondary    { border-color: #adb5bd; color: #495057; }
+body.light-theme .btn-outline-secondary:hover { background-color: #adb5bd; color: #212529; }
+body.light-theme .btn-outline-info         { border-color: #0dcaf0; color: #0dcaf0; }
+
+/* Forms */
+body.light-theme .form-control,
+body.light-theme .form-select,
+body.light-theme input[type="text"],
+body.light-theme input[type="number"] {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  border-color: #ced4da !important;
+}
+body.light-theme .form-control:focus,
+body.light-theme input:focus {
+  border-color: #6610f2 !important;
+  box-shadow: 0 0 0 0.2rem rgba(102,16,242,0.2) !important;
+}
+body.light-theme .form-check-label { color: #212529 !important; }
+body.light-theme .form-check-input {
+  background-color: #ffffff !important;
+  border: 2px solid #adb5bd !important;
+}
+body.light-theme .form-check-input:checked {
+  background-color: #6610f2 !important;
+  border-color: #6610f2 !important;
+}
+
+/* Alerts */
+body.light-theme .alert {
+  background-color: #e8f4fd !important;
+  border-color: #90c6f0 !important;
+  color: #1a4a70 !important;
+}
+
+/* Accordion */
+body.light-theme .accordion-button           { background-color: #f0f0f0 !important; color: #212529 !important; }
+body.light-theme .accordion-button:not(.collapsed) { background-color: #e9ecef !important; color: #0066cc !important; box-shadow: none !important; }
+body.light-theme .accordion-button::after    { filter: none; }
+body.light-theme .accordion-body            { background-color: #f5f5f5 !important; color: #212529 !important; }
+body.light-theme .accordion-item            { background-color: #f5f5f5 !important; border-color: #dee2e6 !important; }
+
+/* dcc.Dropdown (Dash 4 Radix) */
+body.light-theme .dash-dropdown-wrapper {
+  --Dash-Fill-Inverse-Strong:      #ffffff;
+  --Dash-Text-Strong:              #212529;
+  --Dash-Text-Weak:                #495057;
+  --Dash-Text-Disabled:            #adb5bd;
+  --Dash-Stroke-Strong:            #ced4da;
+  --Dash-Fill-Interactive-Strong:  #6610f2;
+  --Dash-Fill-Interactive-Weak:    rgba(102,16,242,0.12);
+  --Dash-Fill-Disabled:            #e9ecef;
+  --Dash-Shading-Strong:           rgba(0,0,0,0.12);
+  --Dash-Shading-Weak:             rgba(0,0,0,0.06);
+}
+body.light-theme .dash-dropdown             { background-color: #ffffff !important; border-color: #ced4da !important; color: #212529 !important; }
+body.light-theme .dash-dropdown-value       { color: #212529 !important; }
+body.light-theme .dash-dropdown-placeholder { color: #adb5bd !important; }
+body.light-theme .dash-dropdown-trigger-icon { color: #495057 !important; fill: #495057 !important; }
+body.light-theme .dash-dropdown-content    { background-color: #ffffff !important; border-color: #ced4da !important; color: #212529 !important; }
+body.light-theme .dash-dropdown-options    { background-color: #ffffff !important; }
+body.light-theme .dash-dropdown-option     { background-color: #ffffff !important; color: #212529 !important; }
+body.light-theme .dash-dropdown-option:hover { background-color: #f2f2f2 !important; }
+body.light-theme .dash-dropdown-search-container { background-color: #f5f5f5 !important; border-color: #dee2e6 !important; }
+body.light-theme .dash-dropdown-search     { color: #212529 !important; }
+body.light-theme .dash-dropdown-search::placeholder { color: #adb5bd !important; }
+
+/* ag-grid */
+body.light-theme .ag-theme-alpine-dark {
+  --ag-background-color:              #ffffff;
+  --ag-header-background-color:       #f0f0f0;
+  --ag-odd-row-background-color:      #fafafa;
+  --ag-row-hover-color:               #e9ecef;
+  --ag-selected-row-background-color: rgba(102,16,242,0.10);
+  --ag-border-color:                  #dee2e6;
+  --ag-header-foreground-color:       #212529;
+  --ag-foreground-color:              #212529;
+  --ag-secondary-foreground-color:    #6c757d;
+  --ag-input-focus-border-color:      #6610f2;
+  --ag-range-selection-border-color:  #6610f2;
+  --ag-alpine-active-color:           #6610f2;
+}
+body.light-theme .ag-theme-alpine-dark .ag-popup-editor,
+body.light-theme .ag-theme-alpine-dark .ag-select-list,
+body.light-theme .ag-theme-alpine-dark .ag-popup {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  border-color: #dee2e6 !important;
+}
+body.light-theme .ag-theme-alpine-dark .ag-cell-edit-wrapper input,
+body.light-theme .ag-theme-alpine-dark .ag-text-field-input {
+  background-color: #f5f5f5 !important;
+  color: #212529 !important;
+  border-color: #6610f2 !important;
+}
+
+/* Scrollbars */
+body.light-theme * { scrollbar-color: #adb5bd #f5f5f5; }
+body.light-theme ::-webkit-scrollbar-track { background: #f5f5f5; }
+body.light-theme ::-webkit-scrollbar-thumb { background: #adb5bd; }
+body.light-theme ::-webkit-scrollbar-thumb:hover { background: #6610f2; }
